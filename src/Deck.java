@@ -5,9 +5,13 @@ import java.util.UUID;
 
 public class Deck {
 
+	private UUID DeckNumber;
+
 	private ArrayList<Card> DeckCards = new ArrayList<Card>();
+
 	
-	private Deck() {
+	//Creates and shuffles a deck
+	public Deck() {
 
 		for (int i = 0; i < 4; i++) {
 			eSuit suit = eSuit.values()[i];
@@ -18,37 +22,25 @@ public class Deck {
 
 		}
 
+		Collections.shuffle(DeckCards);
 	}
-	
-	Collections.system(DeckCards);
-	
-	/*private Deck(int numberOfJokers) {
-		this();
-		for (int k = 0; k < numberOfJokers; k++) {
-			eSuit suit = eSuit.values()[4];
-			eRank rank = eRank.values()[99];
-		}
-	}*/
-	
+
+	// Draw a card and remove it from deck
+	public Card drawFromDeck() {
+		Card c = DeckCards.get(0);
+		DeckCards.remove(c);
+		return c;
+	}
+
+	// Number of cards remaining
+	public int cardsRemaining() {
+		return DeckCards.size();
+	}
+
+	/*
+	 * private Deck(int numberOfJokers) { this(); for (int k = 0; k <
+	 * numberOfJokers; k++) { eSuit suit = eSuit.values()[4]; eRank rank =
+	 * eRank.values()[99]; } }
+	 */
+
 }
-
-
-//private int NumberOfCards{ return NumberOfCards; }
-
-/*
- * 
- * private UUID DeckNumber;
- * 
- * 
- * 
- * 
- * 
- * } }
- * 
- * //Draw a card public Card draw() { Card c = DeckCards.get(0);
- * DeckCards.remove(c);
- * 
- * return c; }
- * 
- * public int NbrOfCards() { return DeckCards.size(); }
- */
