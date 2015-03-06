@@ -4,6 +4,7 @@ import java.util.Collections;
 public class Hand {
 	private ArrayList<Card> hand = new ArrayList<Card>();
 	
+	
 	public Hand() {
 		Deck ourDeck = new Deck();
 		for (int i = 0; i<5; i++){
@@ -17,6 +18,15 @@ public class Hand {
 		}
 		
 		public void sortHand(){
+			ArrayList<Card> sortedHand = new ArrayList<Card>();
+			
+			for (int i = 12; i>=0; i--){
+				for (int j = 0; j <=4; j++){
+					if (hand.get(j).getRank() == i){
+						sortedHand.add(hand.get(j));
+					}
+				}
+			}
 			Collections.sort(hand);
 			
 		}	
