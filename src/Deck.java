@@ -25,19 +25,21 @@ public class Deck {
 		Collections.shuffle(DeckCards);
 	}
 
-	// Draw a card and remove it from deck
+	// Draws a card and removes it from deck
 	public Card drawFromDeck() {
 		Card c = DeckCards.get(0);
 		DeckCards.remove(c);
 		return c;
 	}
 
-	// Number of cards remaining
+	// Finds number of cards remaining
 	public int cardsRemaining() {
 		return DeckCards.size();
 	}
 
+	
 	/*
+	 * Saved for later when we add jokers...
 	 * private Deck(int numberOfJokers) { this(); for (int k = 0; k <
 	 * numberOfJokers; k++) { eSuit suit = eSuit.values()[4]; eRank rank =
 	 * eRank.values()[99]; } }
